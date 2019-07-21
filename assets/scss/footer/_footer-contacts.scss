@@ -1,0 +1,81 @@
+.footer-contacts {
+    @include lg-min {
+        margin-bottom: $gap * 6.3;
+    }
+    @include lg-md {
+        margin-bottom: $gap * 4;
+    }
+    @include md-sm {
+        margin-bottom: $gap * 3;
+    }
+    @include sm {
+        margin-bottom: $gap * 2;
+    }
+    &__title {
+        color: $color-accent;
+        @extend %section-title;
+    }
+    &__description {
+        color: $color-gray-light;
+        @extend %section-description;
+        @include lg-min {
+            margin: ($gap * 0.2) ($gap * 4) ($gap * 2.1);
+        }
+        @include lg-md {
+            margin: ($gap * 0.2) ($gap * 3) ($gap * 2.1);
+        }
+        @include md {
+            margin: ($gap * 0.2) 0 ($gap * 1.5);
+        }
+    }
+    &__form {
+        display: grid;
+        grid-gap: $gap;
+        @include lg-min {
+            grid-template-columns: 1fr 127px;
+            margin: 0 ($gap * 5) ($gap * 3.5);
+        }
+        @include lg-md {
+            grid-template-columns: 1fr 127px;
+            margin: 0 ($gap * 4) ($gap * 2);
+        }
+        @include md-sm {
+            grid-template-columns: 1fr 127px;
+            margin: 0 0 $gap;
+        }
+        @include sm {
+            margin: 0 0 $gap;
+        }
+        input {
+            padding: ($gap * 0.8) ($gap * 1.1);
+            @extend %form-preset;
+            &::placeholder {
+                color: $color-gray-light;
+            }
+        }
+        button {
+            cursor: pointer;
+            font-weight: 700;
+            background-color: $color-accent;
+            &:hover,
+            &:focus {
+                background-color: rgba($color-accent, 0.87);
+            }
+            @extend %form-preset;
+        }
+    }
+    &__socials {
+        display: flex;
+        justify-content: center;
+        a {
+            color: $color-accent;
+            margin: 0 ($gap * 0.75);
+            display: block;
+            font-size: 2.75rem;
+            &:hover,
+            &:focus {
+                color: $color-light;
+            }
+        }
+    }
+}

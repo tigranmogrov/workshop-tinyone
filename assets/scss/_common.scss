@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-main;
+    font-size: $font-size;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    transition: transform 0.25s;
+    background-color: $color-light;
+    &::before {
+        position: absolute;
+        content: "";
+        z-index: -10;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 0;
+        background-color: $color-main;
+        opacity: 0;
+    }
+    &.active {
+        transform: translateX(-$navbar-mobile-width);
+        transition: transform 0.5s;
+        overflow-y: hidden;
+        &::before {
+            z-index: 10;
+            height: 100%;
+            opacity: 0.85;
+        }
+    }
+}
+
+a {
+    transition: color 0.5s;
+    text-decoration: none;
+    color: $color-main;
+}
+
+.container {
+    display: grid;
+    max-width: $max-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gap;
+    padding-left: $gap;
+}

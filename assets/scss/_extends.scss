@@ -1,0 +1,27 @@
+%section-title {
+  text-align: center;
+  font-size: 2rem;
+
+  @include lg-min {
+    margin: 0 ($gap * 4) ($gap * 0.5);
+  }
+  @include lg-md {
+    margin: 0 ($gap * 3) ($gap * 0.5);
+  }
+  @include md {
+    margin: 0 0 ($gap * 0.5);
+  }
+}
+
+%section-description {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+%form-preset {
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
